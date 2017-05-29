@@ -30,6 +30,10 @@
         self.sessionManager.requestSerializer.timeoutInterval = 15.0;
         self.sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
         self.sessionManager.completionQueue = dispatch_queue_create("com.wish.netCompletionQueue", DISPATCH_QUEUE_SERIAL);
+        User *user = [[Global shareInstance] lastLoginUser];
+        if(user) {
+            [self saveLoginUserId:user.ID];
+        }
     }
     return self;
 }

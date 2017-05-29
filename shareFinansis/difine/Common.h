@@ -13,6 +13,8 @@
 
 #define REQEUST_SUCCESS @"200"
 #define REQEUST_FAIL @"201"
+#define LOGIN_USER_NAME @"loginUserName"
+#define LOGIN_USER_PASSWORD @"loginUserPassword"
 
 #define Iphone_Height   [[UIScreen mainScreen ] bounds ].size.height
 #define Iphone_Width    [[UIScreen mainScreen ] bounds ].size.width

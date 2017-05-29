@@ -12,6 +12,7 @@
 #import "User.h"
 #import "SystemHudView.h"
 #import "AccountBookListVC.h"
+#import "BaseNavViewController.h"
 
 @interface LoginVC ()
 @property(nonatomic,weak) UITextField *nameTextField;
@@ -24,6 +25,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configView];
+    //设置表单默认值
+    [self configDefaultFields];
 }
 
 
@@ -76,6 +79,13 @@
     loginBtn.sd_layout.widthIs(200).heightIs(40).centerXEqualToView(self.view).bottomSpaceToView(self.view, 40);
 }
 
+- (void)configDefaultFields {
+    NSString *name = [[NSUserDefaults standardUserDefaults] objectForKey:LOGIN_USER_NAME];
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:LOGIN_USER_PASSWORD];
+    self.nameTextField.text = name;
+    self.passwordTextField.text = password;
+}
+
 
 - (void)loginBtnPress:(UIButton *) sender {
     NSString *name = self.nameTextField.text;
@@ -100,10 +110,16 @@
             User *user =  [User mj_objectWithKeyValues: responseBean.content];
             //保存登录用户到本地
             [[Global shareInstance] saveLoginUser:user];
+            [[NSUserDefaults standardUserDefaults] setObject:name forKey:LOGIN_USER_NAME];
+            [[NSUserDefaults standardUserDefaults] setObject:password forKey:LOGIN_USER_PASSWORD];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[SystemHudView sharedInstance] hideHUDViewAfterDelay:1];
-                AccountBookListVC *vc = [[AccountBookListVC alloc] init];
-                [weakSelf.navigationController pushViewController:vc animated:NO];
+                [[SystemHudView sharedInstance] hideHUDView];
+                [weakSelf dismissViewControllerAnimated:YES completion:^{
+                    BaseNavViewController *nav = (BaseNavViewController*)[UIApplication sharedApplication].keyWindow.rootViewController;
+                    AccountBookListVC *accountBookListVC = [[nav viewControllers] objectAtIndex:0];
+                    [accountBookListVC reloadData];
+                }];
             });
         }else {
             dispatch_async(dispatch_get_main_queue(), ^{

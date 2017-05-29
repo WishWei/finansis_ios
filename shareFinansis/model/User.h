@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface User : NSObject
+@interface User : NSObject<NSCoding>
 //id
 @property(nonatomic,strong) NSString *ID;
 //姓名

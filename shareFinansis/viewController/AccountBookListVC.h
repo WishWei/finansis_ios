@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface AccountBookListVC : BaseViewController
-
+- (void)reloadData;
 @end

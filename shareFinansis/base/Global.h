@@ -12,6 +12,8 @@
 @interface Global : NSObject
 + (instancetype)shareInstance;
 - (void)saveLoginUser:(User*)user;
+//上次登录过的用户
+- (User*)lastLoginUser;
 
 - (void)clearLoginUser;
 

@@ -10,6 +10,11 @@
 #import "BaseNavViewController.h"
 #import "IQKeyboardManager.h"
 #import "LoginVC.h"
+#import "AccountBookListVC.h"
+#import "SystemHudView.h"
+#import "NetWorkManager.h"
+#import "ResponseBean.h"
+#import "User.h"
 
 @interface AppDelegate ()
 
@@ -21,13 +26,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    LoginVC *vc=[[LoginVC alloc] init];
+    AccountBookListVC *vc=[[AccountBookListVC alloc] init];
     BaseNavViewController *nav=[[BaseNavViewController alloc] initWithRootViewController:vc];
     self.window.rootViewController=nav;
     [self.window makeKeyAndVisible];
     IQKeyboardManager *man = [IQKeyboardManager sharedManager];
     man.enableAutoToolbar = YES;
     man.enable = YES;
+    [self autoLogin];
     return YES;
 }
 
@@ -56,6 +62,40 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)autoLogin{
+    User *user = [[Global shareInstance] lastLoginUser];
+    if(user == nil) {
+        LoginVC *vc = [[LoginVC alloc] init];
+        BaseNavViewController *nav = [[BaseNavViewController alloc] initWithRootViewController:vc];
+        [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+    }
+    
+    NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:LOGIN_USER_PASSWORD];
+
+    [[SystemHudView sharedInstance] showWaitHudViewWithTitle:@"登录中..."];
+    __weak typeof(self) weakSelf = self;
+    [[NetWorkManager shareInstance] loginWithName:user.name withPassword:password withBlock:^(id data, NSError *error) {
+        ResponseBean *responseBean = data;
+        
+        if([REQEUST_SUCCESS isEqualToString:responseBean.code]) {
+            User *user =  [User mj_objectWithKeyValues: responseBean.content];
+            //保存登录用户到本地
+            [[Global shareInstance] saveLoginUser:user];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[SystemHudView sharedInstance] hideHUDView];
+            });
+        }else {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[SystemHudView sharedInstance] showFailedHudViewWithTitle:responseBean.message];
+                [[SystemHudView sharedInstance] hideHUDViewAfterDelay:1];
+                LoginVC *vc = [[LoginVC alloc] init];
+                BaseNavViewController *nav = [[BaseNavViewController alloc] initWithRootViewController:vc];
+                [weakSelf.window.rootViewController presentViewController:nav animated:YES completion:nil];
+            });
+        }
+    }];
 }
 
 

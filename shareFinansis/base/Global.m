@@ -11,6 +11,7 @@
 
 @interface Global()
 @property(nonatomic,strong) User *loginUser;
+@property(nonatomic,strong) NSString *userStorePath;
 @end
 
 @implementation Global
@@ -21,9 +22,22 @@
     return instance;
 }
 
+- (instancetype)init {
+    if(self = [super init]) {
+         self.userStorePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/adimage"];
+    }
+    return self;
+}
+
 - (void)saveLoginUser:(User*)user {
     _loginUser = user;
+    [NSKeyedArchiver archiveRootObject:user toFile:self.userStorePath];
     [[NetWorkManager shareInstance] saveLoginUserId:user.ID];
+}
+
+- (User*)lastLoginUser {
+    User *user=[NSKeyedUnarchiver unarchiveObjectWithFile:self.userStorePath];
+    return user;
 }
 
 - (void)clearLoginUser{

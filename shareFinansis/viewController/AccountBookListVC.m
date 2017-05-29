@@ -46,6 +46,10 @@
     [self.collectionView.mj_header beginRefreshing];
 }
 
+- (void)reloadData {
+    [self.collectionView.mj_header beginRefreshing];
+}
+
 - (void)refreshData {
     [self.books removeAllObjects];
     self.page = 0;
@@ -70,13 +74,10 @@
             if(pageInfo.page == pageInfo.totalPage) {
                 [weakSelf.collectionView.mj_footer endRefreshingWithNoMoreData];
             }
-            [weakSelf.collectionView reloadData];
-            weakSelf.page ++;
-        }else {
             dispatch_async(dispatch_get_main_queue(), ^{
-                [[SystemHudView sharedInstance] showFailedHudViewWithTitle:responseBean.message];
-                [[SystemHudView sharedInstance] hideHUDViewAfterDelay:1];
+                [weakSelf.collectionView reloadData];
             });
+            weakSelf.page ++;
         }
     }];
 
