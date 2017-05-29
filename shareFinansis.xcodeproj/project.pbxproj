@@ -1,0 +1,553 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B52C3E0C2BA48BAEC2AED1D5 /* libPods-shareFinansis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192D64FF438794790F11FD29 /* libPods-shareFinansis.a */; };
+		DC56268C1EDBC4D70035C663 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56268B1EDBC4D70035C663 /* main.m */; };
+		DC56268F1EDBC4D70035C663 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56268E1EDBC4D70035C663 /* AppDelegate.m */; };
+		DC5626971EDBC4D70035C663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5626961EDBC4D70035C663 /* Assets.xcassets */; };
+		DC56269A1EDBC4D70035C663 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC5626981EDBC4D70035C663 /* LaunchScreen.storyboard */; };
+		DC5626A71EDBCFF20035C663 /* BaseNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626A41EDBCFF20035C663 /* BaseNavViewController.m */; };
+		DC5626A81EDBCFF20035C663 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626A61EDBCFF20035C663 /* BaseViewController.m */; };
+		DC5626AF1EDBD0DA0035C663 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626AE1EDBD0DA0035C663 /* LoginVC.m */; };
+		DC5626C21EDBD18A0035C663 /* AButton.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626B21EDBD18A0035C663 /* AButton.m */; };
+		DC5626C31EDBD18A0035C663 /* ExpenseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626B41EDBD18A0035C663 /* ExpenseCell.m */; };
+		DC5626C41EDBD18A0035C663 /* HomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626B61EDBD18A0035C663 /* HomeHeaderView.m */; };
+		DC5626C51EDBD18A0035C663 /* MonthPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626B81EDBD18A0035C663 /* MonthPickerView.m */; };
+		DC5626C61EDBD18A0035C663 /* SummaryHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626BA1EDBD18A0035C663 /* SummaryHeader.m */; };
+		DC5626C71EDBD18A0035C663 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626BD1EDBD18A0035C663 /* MenuCell.m */; };
+		DC5626C81EDBD18A0035C663 /* WXScrollMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626BF1EDBD18A0035C663 /* WXScrollMenuView.m */; };
+		DC5626C91EDBD18A0035C663 /* ZPNumberKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626C11EDBD18A0035C663 /* ZPNumberKeyboard.m */; };
+		DC5626CF1EDBD46A0035C663 /* Expense.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626CC1EDBD46A0035C663 /* Expense.m */; };
+		DC5626D01EDBD46A0035C663 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626CE1EDBD46A0035C663 /* Type.m */; };
+		DC5626D51EDBD7C90035C663 /* NetWorkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626D41EDBD7C90035C663 /* NetWorkManager.m */; };
+		DC5626D81EDBD94F0035C663 /* ResponseBean.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626D71EDBD94F0035C663 /* ResponseBean.m */; };
+		DC5626DC1EDBE1140035C663 /* SystemHudView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626DB1EDBE1140035C663 /* SystemHudView.m */; };
+		DC5626DF1EDBE78B0035C663 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626DE1EDBE78B0035C663 /* User.m */; };
+		DC5626E21EDBEC030035C663 /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626E11EDBEC030035C663 /* Global.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		192D64FF438794790F11FD29 /* libPods-shareFinansis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shareFinansis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3967FDD31C597E39F64CE50 /* Pods-shareFinansis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shareFinansis.release.xcconfig"; path = "Pods/Target Support Files/Pods-shareFinansis/Pods-shareFinansis.release.xcconfig"; sourceTree = "<group>"; };
+		B42506B347E95FF7C00252C0 /* Pods-shareFinansis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shareFinansis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shareFinansis/Pods-shareFinansis.debug.xcconfig"; sourceTree = "<group>"; };
+		DC5626871EDBC4D70035C663 /* shareFinansis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shareFinansis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC56268B1EDBC4D70035C663 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC56268D1EDBC4D70035C663 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC56268E1EDBC4D70035C663 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC5626961EDBC4D70035C663 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC5626991EDBC4D70035C663 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DC56269B1EDBC4D70035C663 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC5626A31EDBCFF20035C663 /* BaseNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavViewController.h; sourceTree = "<group>"; };
+		DC5626A41EDBCFF20035C663 /* BaseNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavViewController.m; sourceTree = "<group>"; };
+		DC5626A51EDBCFF20035C663 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		DC5626A61EDBCFF20035C663 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		DC5626AA1EDBD03A0035C663 /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		DC5626AB1EDBD03A0035C663 /* Theme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
+		DC5626AD1EDBD0DA0035C663 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		DC5626AE1EDBD0DA0035C663 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		DC5626B11EDBD18A0035C663 /* AButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AButton.h; sourceTree = "<group>"; };
+		DC5626B21EDBD18A0035C663 /* AButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AButton.m; sourceTree = "<group>"; };
+		DC5626B31EDBD18A0035C663 /* ExpenseCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpenseCell.h; sourceTree = "<group>"; };
+		DC5626B41EDBD18A0035C663 /* ExpenseCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpenseCell.m; sourceTree = "<group>"; };
+		DC5626B51EDBD18A0035C663 /* HomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeHeaderView.h; sourceTree = "<group>"; };
+		DC5626B61EDBD18A0035C663 /* HomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeHeaderView.m; sourceTree = "<group>"; };
+		DC5626B71EDBD18A0035C663 /* MonthPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonthPickerView.h; sourceTree = "<group>"; };
+		DC5626B81EDBD18A0035C663 /* MonthPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonthPickerView.m; sourceTree = "<group>"; };
+		DC5626B91EDBD18A0035C663 /* SummaryHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryHeader.h; sourceTree = "<group>"; };
+		DC5626BA1EDBD18A0035C663 /* SummaryHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryHeader.m; sourceTree = "<group>"; };
+		DC5626BC1EDBD18A0035C663 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		DC5626BD1EDBD18A0035C663 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
+		DC5626BE1EDBD18A0035C663 /* WXScrollMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXScrollMenuView.h; sourceTree = "<group>"; };
+		DC5626BF1EDBD18A0035C663 /* WXScrollMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXScrollMenuView.m; sourceTree = "<group>"; };
+		DC5626C01EDBD18A0035C663 /* ZPNumberKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZPNumberKeyboard.h; sourceTree = "<group>"; };
+		DC5626C11EDBD18A0035C663 /* ZPNumberKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZPNumberKeyboard.m; sourceTree = "<group>"; };
+		DC5626CB1EDBD46A0035C663 /* Expense.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Expense.h; sourceTree = "<group>"; };
+		DC5626CC1EDBD46A0035C663 /* Expense.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Expense.m; sourceTree = "<group>"; };
+		DC5626CD1EDBD46A0035C663 /* Type.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Type.h; sourceTree = "<group>"; };
+		DC5626CE1EDBD46A0035C663 /* Type.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type.m; sourceTree = "<group>"; };
+		DC5626D11EDBD5200035C663 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		DC5626D21EDBD7C90035C663 /* NetDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetDefine.h; sourceTree = "<group>"; };
+		DC5626D31EDBD7C90035C663 /* NetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkManager.h; sourceTree = "<group>"; };
+		DC5626D41EDBD7C90035C663 /* NetWorkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkManager.m; sourceTree = "<group>"; };
+		DC5626D61EDBD94F0035C663 /* ResponseBean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResponseBean.h; sourceTree = "<group>"; };
+		DC5626D71EDBD94F0035C663 /* ResponseBean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResponseBean.m; sourceTree = "<group>"; };
+		DC5626DA1EDBE1140035C663 /* SystemHudView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemHudView.h; sourceTree = "<group>"; };
+		DC5626DB1EDBE1140035C663 /* SystemHudView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemHudView.m; sourceTree = "<group>"; };
+		DC5626DD1EDBE78B0035C663 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		DC5626DE1EDBE78B0035C663 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		DC5626E01EDBEC030035C663 /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		DC5626E11EDBEC030035C663 /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC5626841EDBC4D70035C663 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B52C3E0C2BA48BAEC2AED1D5 /* libPods-shareFinansis.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14D16F61450049B9BC931BE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				192D64FF438794790F11FD29 /* libPods-shareFinansis.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC56267E1EDBC4D70035C663 = {
+			isa = PBXGroup;
+			children = (
+				DC5626891EDBC4D70035C663 /* shareFinansis */,
+				DC5626881EDBC4D70035C663 /* Products */,
+				F2A0EAF0D13C26AA3FB74DC9 /* Pods */,
+				14D16F61450049B9BC931BE4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DC5626881EDBC4D70035C663 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626871EDBC4D70035C663 /* shareFinansis.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC5626891EDBC4D70035C663 /* shareFinansis */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626CA1EDBD4550035C663 /* model */,
+				DC5626B01EDBD18A0035C663 /* view */,
+				DC5626AC1EDBD0AC0035C663 /* viewController */,
+				DC5626A91EDBD02A0035C663 /* difine */,
+				DC5626A21EDBCFA90035C663 /* base */,
+				DC56268D1EDBC4D70035C663 /* AppDelegate.h */,
+				DC56268E1EDBC4D70035C663 /* AppDelegate.m */,
+				DC5626961EDBC4D70035C663 /* Assets.xcassets */,
+				DC5626981EDBC4D70035C663 /* LaunchScreen.storyboard */,
+				DC56269B1EDBC4D70035C663 /* Info.plist */,
+				DC56268A1EDBC4D70035C663 /* Supporting Files */,
+			);
+			path = shareFinansis;
+			sourceTree = "<group>";
+		};
+		DC56268A1EDBC4D70035C663 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC56268B1EDBC4D70035C663 /* main.m */,
+				DC5626D11EDBD5200035C663 /* PrefixHeader.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC5626A21EDBCFA90035C663 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626D21EDBD7C90035C663 /* NetDefine.h */,
+				DC5626D31EDBD7C90035C663 /* NetWorkManager.h */,
+				DC5626D41EDBD7C90035C663 /* NetWorkManager.m */,
+				DC5626A31EDBCFF20035C663 /* BaseNavViewController.h */,
+				DC5626A41EDBCFF20035C663 /* BaseNavViewController.m */,
+				DC5626A51EDBCFF20035C663 /* BaseViewController.h */,
+				DC5626A61EDBCFF20035C663 /* BaseViewController.m */,
+				DC5626E01EDBEC030035C663 /* Global.h */,
+				DC5626E11EDBEC030035C663 /* Global.m */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
+		DC5626A91EDBD02A0035C663 /* difine */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626AA1EDBD03A0035C663 /* Common.h */,
+				DC5626AB1EDBD03A0035C663 /* Theme.h */,
+			);
+			path = difine;
+			sourceTree = "<group>";
+		};
+		DC5626AC1EDBD0AC0035C663 /* viewController */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626AD1EDBD0DA0035C663 /* LoginVC.h */,
+				DC5626AE1EDBD0DA0035C663 /* LoginVC.m */,
+			);
+			path = viewController;
+			sourceTree = "<group>";
+		};
+		DC5626B01EDBD18A0035C663 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626D91EDBE0FC0035C663 /* SystemHudView */,
+				DC5626BB1EDBD18A0035C663 /* WXScrollMenuView */,
+				DC5626B11EDBD18A0035C663 /* AButton.h */,
+				DC5626B21EDBD18A0035C663 /* AButton.m */,
+				DC5626B31EDBD18A0035C663 /* ExpenseCell.h */,
+				DC5626B41EDBD18A0035C663 /* ExpenseCell.m */,
+				DC5626B51EDBD18A0035C663 /* HomeHeaderView.h */,
+				DC5626B61EDBD18A0035C663 /* HomeHeaderView.m */,
+				DC5626B71EDBD18A0035C663 /* MonthPickerView.h */,
+				DC5626B81EDBD18A0035C663 /* MonthPickerView.m */,
+				DC5626B91EDBD18A0035C663 /* SummaryHeader.h */,
+				DC5626BA1EDBD18A0035C663 /* SummaryHeader.m */,
+				DC5626C01EDBD18A0035C663 /* ZPNumberKeyboard.h */,
+				DC5626C11EDBD18A0035C663 /* ZPNumberKeyboard.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DC5626BB1EDBD18A0035C663 /* WXScrollMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626BC1EDBD18A0035C663 /* MenuCell.h */,
+				DC5626BD1EDBD18A0035C663 /* MenuCell.m */,
+				DC5626BE1EDBD18A0035C663 /* WXScrollMenuView.h */,
+				DC5626BF1EDBD18A0035C663 /* WXScrollMenuView.m */,
+			);
+			path = WXScrollMenuView;
+			sourceTree = "<group>";
+		};
+		DC5626CA1EDBD4550035C663 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626CB1EDBD46A0035C663 /* Expense.h */,
+				DC5626CC1EDBD46A0035C663 /* Expense.m */,
+				DC5626CD1EDBD46A0035C663 /* Type.h */,
+				DC5626CE1EDBD46A0035C663 /* Type.m */,
+				DC5626D61EDBD94F0035C663 /* ResponseBean.h */,
+				DC5626D71EDBD94F0035C663 /* ResponseBean.m */,
+				DC5626DD1EDBE78B0035C663 /* User.h */,
+				DC5626DE1EDBE78B0035C663 /* User.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DC5626D91EDBE0FC0035C663 /* SystemHudView */ = {
+			isa = PBXGroup;
+			children = (
+				DC5626DA1EDBE1140035C663 /* SystemHudView.h */,
+				DC5626DB1EDBE1140035C663 /* SystemHudView.m */,
+			);
+			path = SystemHudView;
+			sourceTree = "<group>";
+		};
+		F2A0EAF0D13C26AA3FB74DC9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B42506B347E95FF7C00252C0 /* Pods-shareFinansis.debug.xcconfig */,
+				B3967FDD31C597E39F64CE50 /* Pods-shareFinansis.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC5626861EDBC4D70035C663 /* shareFinansis */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC56269E1EDBC4D70035C663 /* Build configuration list for PBXNativeTarget "shareFinansis" */;
+			buildPhases = (
+				9A014787E7A6214922473A81 /* [CP] Check Pods Manifest.lock */,
+				DC5626831EDBC4D70035C663 /* Sources */,
+				DC5626841EDBC4D70035C663 /* Frameworks */,
+				DC5626851EDBC4D70035C663 /* Resources */,
+				5B731F31DA7E32C2AF236362 /* [CP] Embed Pods Frameworks */,
+				5E312A5C8BA8DC7C6D72AE4B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = shareFinansis;
+			productName = shareFinansis;
+			productReference = DC5626871EDBC4D70035C663 /* shareFinansis.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC56267F1EDBC4D70035C663 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "魏希";
+				TargetAttributes = {
+					DC5626861EDBC4D70035C663 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 8NW6G5A75K;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = DC5626821EDBC4D70035C663 /* Build configuration list for PBXProject "shareFinansis" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC56267E1EDBC4D70035C663;
+			productRefGroup = DC5626881EDBC4D70035C663 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC5626861EDBC4D70035C663 /* shareFinansis */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC5626851EDBC4D70035C663 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC56269A1EDBC4D70035C663 /* LaunchScreen.storyboard in Resources */,
+				DC5626971EDBC4D70035C663 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5B731F31DA7E32C2AF236362 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shareFinansis/Pods-shareFinansis-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E312A5C8BA8DC7C6D72AE4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-shareFinansis/Pods-shareFinansis-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A014787E7A6214922473A81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC5626831EDBC4D70035C663 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC5626D51EDBD7C90035C663 /* NetWorkManager.m in Sources */,
+				DC5626C41EDBD18A0035C663 /* HomeHeaderView.m in Sources */,
+				DC5626A81EDBCFF20035C663 /* BaseViewController.m in Sources */,
+				DC5626C21EDBD18A0035C663 /* AButton.m in Sources */,
+				DC5626A71EDBCFF20035C663 /* BaseNavViewController.m in Sources */,
+				DC5626D81EDBD94F0035C663 /* ResponseBean.m in Sources */,
+				DC5626CF1EDBD46A0035C663 /* Expense.m in Sources */,
+				DC5626DC1EDBE1140035C663 /* SystemHudView.m in Sources */,
+				DC5626C71EDBD18A0035C663 /* MenuCell.m in Sources */,
+				DC5626AF1EDBD0DA0035C663 /* LoginVC.m in Sources */,
+				DC5626C61EDBD18A0035C663 /* SummaryHeader.m in Sources */,
+				DC56268F1EDBC4D70035C663 /* AppDelegate.m in Sources */,
+				DC5626E21EDBEC030035C663 /* Global.m in Sources */,
+				DC5626C91EDBD18A0035C663 /* ZPNumberKeyboard.m in Sources */,
+				DC5626D01EDBD46A0035C663 /* Type.m in Sources */,
+				DC56268C1EDBC4D70035C663 /* main.m in Sources */,
+				DC5626DF1EDBE78B0035C663 /* User.m in Sources */,
+				DC5626C51EDBD18A0035C663 /* MonthPickerView.m in Sources */,
+				DC5626C31EDBD18A0035C663 /* ExpenseCell.m in Sources */,
+				DC5626C81EDBD18A0035C663 /* WXScrollMenuView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DC5626981EDBC4D70035C663 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC5626991EDBC4D70035C663 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC56269C1EDBC4D70035C663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DC56269D1EDBC4D70035C663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC56269F1EDBC4D70035C663 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B42506B347E95FF7C00252C0 /* Pods-shareFinansis.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8NW6G5A75K;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/shareFinansis/PrefixHeader.pch";
+				INFOPLIST_FILE = shareFinansis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wish.shareFinansis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DC5626A01EDBC4D70035C663 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3967FDD31C597E39F64CE50 /* Pods-shareFinansis.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8NW6G5A75K;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/shareFinansis/PrefixHeader.pch";
+				INFOPLIST_FILE = shareFinansis/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wish.shareFinansis;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC5626821EDBC4D70035C663 /* Build configuration list for PBXProject "shareFinansis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC56269C1EDBC4D70035C663 /* Debug */,
+				DC56269D1EDBC4D70035C663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC56269E1EDBC4D70035C663 /* Build configuration list for PBXNativeTarget "shareFinansis" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC56269F1EDBC4D70035C663 /* Debug */,
+				DC5626A01EDBC4D70035C663 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC56267F1EDBC4D70035C663 /* Project object */;
+}
