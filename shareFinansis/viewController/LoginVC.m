@@ -11,6 +11,7 @@
 #import "ResponseBean.h"
 #import "User.h"
 #import "SystemHudView.h"
+#import "AccountBookListVC.h"
 
 @interface LoginVC ()
 @property(nonatomic,weak) UITextField *nameTextField;
@@ -91,16 +92,18 @@
         return;
     }
     [[SystemHudView sharedInstance] showWaitHudViewWithTitle:@"登录中..."];
+    __weak typeof(self) weakSelf = self;
     [[NetWorkManager shareInstance] loginWithName:name withPassword:password withBlock:^(id data, NSError *error) {
         ResponseBean *responseBean = data;
         
         if([REQEUST_SUCCESS isEqualToString:responseBean.code]) {
-            //跳转
             User *user =  [User mj_objectWithKeyValues: responseBean.content];
             //保存登录用户到本地
-            [Global shareInstance].loginUser = user;
+            [[Global shareInstance] saveLoginUser:user];
             dispatch_async(dispatch_get_main_queue(), ^{
                 [[SystemHudView sharedInstance] hideHUDViewAfterDelay:1];
+                AccountBookListVC *vc = [[AccountBookListVC alloc] init];
+                [weakSelf.navigationController pushViewController:vc animated:NO];
             });
         }else {
             dispatch_async(dispatch_get_main_queue(), ^{

@@ -34,6 +34,16 @@
     return self;
 }
 
+- (void)saveLoginUserId:(NSString *)loginUserId {
+    [self.sessionManager.requestSerializer setValue:loginUserId forHTTPHeaderField:@"loginUserId"];
+}
+
+- (void)clearLoginUserId {
+    [self.sessionManager.requestSerializer setValue:nil forHTTPHeaderField:@"loginUserId"];
+}
+
+
+
 - (void)request:(NSString*)urlString withParams:(NSDictionary *)params withMethod:(RequestMethod) method withBlock:(NetworkBlock)block{
     if(method == RequestMethodGET){
         [self.sessionManager GET:urlString parameters:params progress:^(NSProgress * _Nonnull downloadProgress) {
@@ -60,6 +70,22 @@
     NSMutableDictionary *params = [NSMutableDictionary  dictionary];
     [params setValue:name forKey:@"name"];
     [params setValue:password forKey:@"password"];
+    [self request:fullPath withParams:params withMethod:RequestMethodGET withBlock:^(id data, NSError *error) {
+        if(error){
+            error = [NSError errorWithDomain:@"网络异常" code:-9999 userInfo:nil];
+            block(nil,error);
+        }else{
+            ResponseBean *responseBean=[ResponseBean mj_objectWithKeyValues:data];
+            block(responseBean,nil);
+        }
+    }];
+}
+
+- (void)accountBooksWithPage:(int) page withPageSize:(int) pageSize withBlock:(NetworkBlock)block {
+    NSString *fullPath = [NSString stringWithFormat:kNetwrok_Url_Base, @"accountBook/findAccountBookByUserIdPage.do"];
+    NSMutableDictionary *params = [NSMutableDictionary  dictionary];
+    [params setValue:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
+    [params setValue:[NSString stringWithFormat:@"%d",pageSize] forKey:@"pageSize"];
     [self request:fullPath withParams:params withMethod:RequestMethodGET withBlock:^(id data, NSError *error) {
         if(error){
             error = [NSError errorWithDomain:@"网络异常" code:-9999 userInfo:nil];

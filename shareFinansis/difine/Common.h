@@ -14,6 +14,9 @@
 #define REQEUST_SUCCESS @"200"
 #define REQEUST_FAIL @"201"
 
+#define Iphone_Height   [[UIScreen mainScreen ] bounds ].size.height
+#define Iphone_Width    [[UIScreen mainScreen ] bounds ].size.width
+
 #define screenSizeInPix CGSizeMake([UIScreen mainScreen].bounds.size.width*[UIScreen mainScreen].scale,[UIScreen mainScreen].bounds.size.height*[UIScreen mainScreen].scale)
 
 #endif /* Common_h */

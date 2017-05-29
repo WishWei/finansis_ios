@@ -13,5 +13,6 @@ pod 'HTHorizontalSelectionList', '~> 0.7.3'
 pod 'AFNetworking', '~> 3.0'
 pod 'MJExtension'
 pod 'MBProgressHUD','~>0.9.2'
+pod 'MJRefresh', '~> 3.0.8'
 
 end

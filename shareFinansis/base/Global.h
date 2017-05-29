@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-@class User;
+#import "User.h"
 
 @interface Global : NSObject
 + (instancetype)shareInstance;
+- (void)saveLoginUser:(User*)user;
 
-@property(nonatomic,strong) User *loginUser;
+- (void)clearLoginUser;
+
 @end

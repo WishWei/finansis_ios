@@ -7,6 +7,11 @@
 //
 
 #import "Global.h"
+#import "NetWorkManager.h"
+
+@interface Global()
+@property(nonatomic,strong) User *loginUser;
+@end
 
 @implementation Global
 + (instancetype)shareInstance{
@@ -15,4 +20,15 @@
     dispatch_once(&onceToken, ^{instance = [[Global alloc]init];});
     return instance;
 }
+
+- (void)saveLoginUser:(User*)user {
+    _loginUser = user;
+    [[NetWorkManager shareInstance] saveLoginUserId:user.ID];
+}
+
+- (void)clearLoginUser{
+    _loginUser = nil;
+    [[NetWorkManager shareInstance] clearLoginUserId];
+}
+
 @end
