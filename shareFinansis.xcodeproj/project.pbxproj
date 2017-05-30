@@ -10,6 +10,10 @@
 		B52C3E0C2BA48BAEC2AED1D5 /* libPods-shareFinansis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192D64FF438794790F11FD29 /* libPods-shareFinansis.a */; };
 		DC16577C1EDD147C00CED684 /* AccountDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC16577B1EDD147C00CED684 /* AccountDetailVC.m */; };
 		DC16577F1EDD174900CED684 /* AccountDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DC16577E1EDD174900CED684 /* AccountDetail.m */; };
+		DC2D1FD21EDDAA940079BF0C /* AccountSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = DC2D1FD11EDDAA940079BF0C /* AccountSummary.m */; };
+		DC2D1FDA1EDDAE380079BF0C /* delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2D1FD71EDDAE380079BF0C /* delete@2x.png */; };
+		DC2D1FDB1EDDAE380079BF0C /* delete@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2D1FD81EDDAE380079BF0C /* delete@3x.png */; };
+		DC2D1FDC1EDDAE380079BF0C /* szjp_up.png in Resources */ = {isa = PBXBuildFile; fileRef = DC2D1FD91EDDAE380079BF0C /* szjp_up.png */; };
 		DC56268C1EDBC4D70035C663 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56268B1EDBC4D70035C663 /* main.m */; };
 		DC56268F1EDBC4D70035C663 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56268E1EDBC4D70035C663 /* AppDelegate.m */; };
 		DC5626971EDBC4D70035C663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5626961EDBC4D70035C663 /* Assets.xcassets */; };
@@ -49,6 +53,11 @@
 		DC16577B1EDD147C00CED684 /* AccountDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailVC.m; sourceTree = "<group>"; };
 		DC16577D1EDD174900CED684 /* AccountDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetail.h; sourceTree = "<group>"; };
 		DC16577E1EDD174900CED684 /* AccountDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetail.m; sourceTree = "<group>"; };
+		DC2D1FD01EDDAA940079BF0C /* AccountSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSummary.h; sourceTree = "<group>"; };
+		DC2D1FD11EDDAA940079BF0C /* AccountSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSummary.m; sourceTree = "<group>"; };
+		DC2D1FD71EDDAE380079BF0C /* delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@2x.png"; sourceTree = "<group>"; };
+		DC2D1FD81EDDAE380079BF0C /* delete@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "delete@3x.png"; sourceTree = "<group>"; };
+		DC2D1FD91EDDAE380079BF0C /* szjp_up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = szjp_up.png; sourceTree = "<group>"; };
 		DC5626871EDBC4D70035C663 /* shareFinansis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shareFinansis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC56268B1EDBC4D70035C663 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC56268D1EDBC4D70035C663 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -129,6 +138,16 @@
 				192D64FF438794790F11FD29 /* libPods-shareFinansis.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DC2D1FD61EDDAE380079BF0C /* img */ = {
+			isa = PBXGroup;
+			children = (
+				DC2D1FD71EDDAE380079BF0C /* delete@2x.png */,
+				DC2D1FD81EDDAE380079BF0C /* delete@3x.png */,
+				DC2D1FD91EDDAE380079BF0C /* szjp_up.png */,
+			);
+			path = img;
 			sourceTree = "<group>";
 		};
 		DC56267E1EDBC4D70035C663 = {
@@ -269,6 +288,8 @@
 				DC5626ED1EDC1D570035C663 /* PageInfo.m */,
 				DC16577D1EDD174900CED684 /* AccountDetail.h */,
 				DC16577E1EDD174900CED684 /* AccountDetail.m */,
+				DC2D1FD01EDDAA940079BF0C /* AccountSummary.h */,
+				DC2D1FD11EDDAA940079BF0C /* AccountSummary.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -285,6 +306,7 @@
 		DCDB1CE61EDD1E130009EF97 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				DC2D1FD61EDDAE380079BF0C /* img */,
 				DCDB1CEB1EDD1E130009EF97 /* plist */,
 			);
 			path = Resource;
@@ -379,6 +401,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCDB1CF01EDD1E130009EF97 /* type.plist in Resources */,
+				DC2D1FDB1EDDAE380079BF0C /* delete@3x.png in Resources */,
+				DC2D1FDA1EDDAE380079BF0C /* delete@2x.png in Resources */,
+				DC2D1FDC1EDDAE380079BF0C /* szjp_up.png in Resources */,
 				DC56269A1EDBC4D70035C663 /* LaunchScreen.storyboard in Resources */,
 				DC5626971EDBC4D70035C663 /* Assets.xcassets in Resources */,
 			);
@@ -454,6 +479,7 @@
 				DC5626C61EDBD18A0035C663 /* SummaryHeader.m in Sources */,
 				DC56268F1EDBC4D70035C663 /* AppDelegate.m in Sources */,
 				DCDB1CF31EDD25710009EF97 /* AddAccountDetailVC.m in Sources */,
+				DC2D1FD21EDDAA940079BF0C /* AccountSummary.m in Sources */,
 				DC5626E21EDBEC030035C663 /* Global.m in Sources */,
 				DC5626C91EDBD18A0035C663 /* ZPNumberKeyboard.m in Sources */,
 				DC5626EB1EDBF7DA0035C663 /* AccountBook.m in Sources */,

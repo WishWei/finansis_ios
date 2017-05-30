@@ -31,6 +31,10 @@
 //根据账本id分页查询明细
 - (void)accountDetailsWithBookId:(NSString*)bookId withPage:(int) page withPageSize:(int) pageSize withBlock:(NetworkBlock)block;
 
+//查询账本总金额
+- (void)accountTotalMoneyWithBookId:(NSString*)bookId
+                          withBlock:(NetworkBlock)block;
+
 //保存账本明细
 - (void)saveAccountDetailsWithBookId:(NSString*)bookId
                             withType:(int) type

@@ -18,8 +18,10 @@
 #import "AccountDetail.h"
 #import "AddAccountDetailVC.h"
 #import "BaseNavViewController.h"
+#import "SystemHudView.h"
+#import "AccountSummary.h"
 
-@interface AccountDetailVC()<UITableViewDelegate,UITableViewDataSource,SummaryHeaderDelegate,MonthPickerViewDelegate>
+@interface AccountDetailVC()<UITableViewDelegate,UITableViewDataSource,MonthPickerViewDelegate>
 @property(nonatomic,strong)NSMutableArray *accountDetails;
 @property(nonatomic,weak)UITableView *tableView;
 @property(nonatomic,weak)UIButton *addBtn;
@@ -45,6 +47,7 @@
 }
 
 - (void)refreshData{
+    [self loadTotalMoney];
     [self.accountDetails removeAllObjects];
     self.page = 0;
     [self.tableView.mj_footer resetNoMoreData];
@@ -79,9 +82,31 @@
                 [weakSelf.tableView reloadData];
             });
             weakSelf.page ++;
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[SystemHudView sharedInstance] showFailedHudViewWithTitle:responseBean.message];
+                [[SystemHudView sharedInstance] hideHUDViewAfterDelay:1];
+            });
         }
     }];
 
+}
+
+- (void)loadTotalMoney {
+    [[NetWorkManager shareInstance] accountTotalMoneyWithBookId:self.accountBook.ID withBlock:^(id data, NSError *error) {
+        ResponseBean *responseBean = data;
+        if([REQEUST_SUCCESS isEqualToString:responseBean.code]) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                AccountSummary *accountSummary =  [AccountSummary mj_objectWithKeyValues: responseBean.content];
+                self.summaryHeader.accountSummary = accountSummary;
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[SystemHudView sharedInstance] showFailedHudViewWithTitle:responseBean.message];
+                [[SystemHudView sharedInstance] hideHUDViewAfterDelay:1];
+            });
+        }
+    }];
 }
 
 - (void)configView{
@@ -92,7 +117,6 @@
     [self.view addSubview:tableView];
     SummaryHeader *summaryHeader = [[SummaryHeader alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), 100)];
     tableView.tableHeaderView = summaryHeader;
-    summaryHeader.delegate = self;
     self.summaryHeader = summaryHeader;
     tableView.tableFooterView=[[UIView alloc] init];
     tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(refreshData)];
@@ -172,18 +196,6 @@
 //            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 //        }
 //    }
-}
-
-#pragma mark SummaryHeaderDelegate
-- (void)didDateBtnPress {
-//    MonthPickerView *monthPickerView = [[MonthPickerView alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame)-240, CGRectGetWidth(self.view.frame), 240)];
-//    NSCalendar* calendar = [NSCalendar currentCalendar];
-//    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[NSDate date]];
-//    monthPickerView.startYear = 1900;
-//    monthPickerView.endYear = (int)components.year;
-//    monthPickerView.selectedDate = self.date;
-//    monthPickerView.delegate = self;
-//    [self presentSemiView:monthPickerView];
 }
 
 #pragma mark MonthPickerViewDelegate

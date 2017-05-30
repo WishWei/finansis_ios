@@ -118,6 +118,21 @@
     }];
 }
 
+- (void)accountTotalMoneyWithBookId:(NSString*)bookId withBlock:(NetworkBlock)block {
+    NSString *fullPath = [NSString stringWithFormat:kNetwrok_Url_Base, @"accountDetail/findTotalMoneyByBookId.do"];
+    NSMutableDictionary *params = [NSMutableDictionary  dictionary];
+    [params setValue:bookId forKey:@"bookId"];
+    [self request:fullPath withParams:params withMethod:RequestMethodGET withBlock:^(id data, NSError *error) {
+        if(error){
+            error = [NSError errorWithDomain:@"网络异常" code:-9999 userInfo:nil];
+            block(nil,error);
+        }else{
+            ResponseBean *responseBean=[ResponseBean mj_objectWithKeyValues:data];
+            block(responseBean,nil);
+        }
+    }];
+}
+
 - (void)saveAccountDetailsWithBookId:(NSString*)bookId
                             withType:(int) type
                            withMoney:(double) money

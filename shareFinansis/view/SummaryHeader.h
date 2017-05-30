@@ -7,15 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@protocol SummaryHeaderDelegate <NSObject>
-
-- (void)didDateBtnPress;
-
-@end
+@class AccountSummary;
 
 @interface SummaryHeader : UIView
-@property (nonatomic, strong) NSDate *date;
-@property (nonatomic, assign) double sum;
-@property (nonatomic ,weak) id <SummaryHeaderDelegate> delegate;
+@property (nonatomic, strong) AccountSummary *accountSummary;
 @end
