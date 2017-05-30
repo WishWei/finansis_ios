@@ -64,9 +64,7 @@
         if([REQEUST_SUCCESS isEqualToString:responseBean.code]) {
             PageInfo *pageInfo = [PageInfo mj_objectWithKeyValues: responseBean.content];
             NSArray *accountDetails = [AccountDetail mj_objectArrayWithKeyValuesArray:pageInfo.items];
-            if([accountDetails count] > 0) {
-                [weakSelf.accountDetails addObjectsFromArray:accountDetails];
-            }else {
+            if([accountDetails count] <= 0) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
                 });
@@ -77,6 +75,7 @@
                 });
             }
             dispatch_async(dispatch_get_main_queue(), ^{
+                [weakSelf.accountDetails addObjectsFromArray:accountDetails];
                 [weakSelf.tableView reloadData];
             });
             weakSelf.page ++;
@@ -151,8 +150,10 @@
         cell.selectionStyle=UITableViewCellSelectionStyleNone;
     }
     cell.bgView.backgroundColor = indexPath.row%2 == 0 ? COLOR_PAGE_BG : [UIColor whiteColor];
-    AccountDetail *accountDetail = [self.accountDetails objectAtIndex:indexPath.row];
-    cell.accountDetail = accountDetail;
+    if(indexPath.row < [self.accountDetails count]) {
+        AccountDetail *accountDetail = [self.accountDetails objectAtIndex:indexPath.row];
+        cell.accountDetail = accountDetail;
+    }
     return cell;
 }
 

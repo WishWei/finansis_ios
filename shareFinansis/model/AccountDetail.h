@@ -31,4 +31,6 @@
 @property(nonatomic,strong) NSString *createTime;
 //更新时间
 @property(nonatomic,strong) NSString *updateTime;
+//用户名
+@property(nonatomic,strong) NSString *userName;
 @end
