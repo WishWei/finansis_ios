@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseViewController.h"
+@class AccountBook;
+
+typedef void(^AddDetailBlock)();
 
 @interface AddAccountDetailVC : BaseViewController
-
+@property(nonatomic,strong) AccountBook *accountBook;
+@property(nonatomic,copy) AddDetailBlock addDetailBlock;
 @end

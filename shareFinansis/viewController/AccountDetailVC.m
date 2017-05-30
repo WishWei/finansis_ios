@@ -55,8 +55,11 @@
     __weak typeof(self) weakSelf = self;
     [[NetWorkManager shareInstance] accountDetailsWithBookId:self.accountBook.ID withPage:self.page withPageSize:self.pageSize
                                                    withBlock:^(id data, NSError *error) {
-        [weakSelf.tableView.mj_header endRefreshing];
-        [weakSelf.tableView.mj_footer endRefreshing];
+                                                       
+                                                       dispatch_async(dispatch_get_main_queue(), ^{
+                                                           [weakSelf.tableView.mj_header endRefreshing];
+                                                           [weakSelf.tableView.mj_footer endRefreshing];
+                                                       });
         ResponseBean *responseBean = data;
         if([REQEUST_SUCCESS isEqualToString:responseBean.code]) {
             PageInfo *pageInfo = [PageInfo mj_objectWithKeyValues: responseBean.content];
@@ -64,10 +67,14 @@
             if([accountDetails count] > 0) {
                 [weakSelf.accountDetails addObjectsFromArray:accountDetails];
             }else {
-                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+                });
             }
             if(pageInfo.page == pageInfo.totalPage) {
-                [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.tableView.mj_footer endRefreshingWithNoMoreData];
+                });
             }
             dispatch_async(dispatch_get_main_queue(), ^{
                 [weakSelf.tableView reloadData];
@@ -114,6 +121,10 @@
 
 - (void)addBtnPress:(UIButton*)sender{
     AddAccountDetailVC *vc=[[AddAccountDetailVC alloc] init];
+    vc.accountBook = self.accountBook;
+    vc.addDetailBlock = ^{
+        [self.tableView.mj_header beginRefreshing];
+    };
     BaseNavViewController *nav=[[BaseNavViewController alloc] initWithRootViewController:vc];
     [self presentViewController:nav animated:YES completion:nil];
 }
@@ -124,20 +135,16 @@
     return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 40;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [self.accountDetails count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 60;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *reuseId=@"expenseCell";
+    static NSString *reuseId = @"expenseCell";
     ExpenseCell *cell=[tableView dequeueReusableCellWithIdentifier:reuseId];
     if(cell==nil){
         cell=[[ExpenseCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseId];

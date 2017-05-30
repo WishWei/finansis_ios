@@ -118,6 +118,32 @@
     }];
 }
 
+- (void)saveAccountDetailsWithBookId:(NSString*)bookId
+                            withType:(int) type
+                           withMoney:(double) money
+                     withAccountTime:(NSString *) accountTime
+                        withCategory:(NSString *) category
+                          withRemark:(NSString *) remark
+                           withBlock:(NetworkBlock)block {
+    NSString *fullPath = [NSString stringWithFormat:kNetwrok_Url_Base, @"accountDetail/saveAccountDetail.do"];
+    NSMutableDictionary *params = [NSMutableDictionary  dictionary];
+    [params setValue:bookId forKey:@"bookId"];
+    [params setValue:[NSString stringWithFormat:@"%d",type] forKey:@"type"];
+    [params setValue:[NSString stringWithFormat:@"%f",money] forKey:@"money"];
+    [params setValue:accountTime forKey:@"accountTime"];
+    [params setValue:category forKey:@"category"];
+    [params setValue:remark forKey:@"remark"];
+    [self request:fullPath withParams:params withMethod:RequestMethodGET withBlock:^(id data, NSError *error) {
+        if(error){
+            error = [NSError errorWithDomain:@"网络异常" code:-9999 userInfo:nil];
+            block(nil,error);
+        }else{
+            ResponseBean *responseBean=[ResponseBean mj_objectWithKeyValues:data];
+            block(responseBean,nil);
+        }
+    }];
+}
+
 
 
 

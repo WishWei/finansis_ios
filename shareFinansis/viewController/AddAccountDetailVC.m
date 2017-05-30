@@ -10,12 +10,16 @@
 #import "ZPNumberKeyboard.h"
 #import "WXScrollMenuView.h"
 #import "Type.h"
-#import "Expense.h"
+#import "AccountDetail.h"
 #import "AccountDetailVC.h"
 #import "Common.h"
 #import "Theme.h"
 #import "NSString+Extension.h"
 #import "THDatePickerViewController.h"
+#import "SystemHudView.h"
+#import "NetWorkManager.h"
+#import "AccountBook.h"
+#import "ResponseBean.h"
 
 @interface AddAccountDetailVC()<WXScrollMenuViewDelegate,WXScrollMenuViewDataSource,KeyboardDelegate,THDatePickerDelegate>
 @property(nonatomic,weak) UILabel *moneyLabel;
@@ -272,9 +276,7 @@
         CAKeyframeAnimation* animation = [CAKeyframeAnimation animationWithKeyPath:@"transform"];
         animation.duration = 0.3;
         NSMutableArray *values = [NSMutableArray array];
-        //            [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.1, 0.1, 1.0)]];
         [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.2, 1.2, 1.0)]];
-        //            [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(0.9, 0.9, 1.0)]];
         [values addObject:[NSValue valueWithCATransform3D:CATransform3DMakeScale(1.0, 1.0, 1.0)]];
         animation.values = values;
         [self.iconView.layer addAnimation:animation forKey:nil];
@@ -296,19 +298,41 @@
 #pragma mark KeyboardDelegate
 - (void)sureBtnPress:(ZPNumberKeyboard*)keyboard{
     if([self.moneyLabel.text doubleValue]==0){
-        UIAlertView *alertView=[[UIAlertView alloc] initWithTitle:@"温馨提示" message:@"金额不能为0" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
-        [alertView show];
+        [[SystemHudView sharedInstance] showToastViewWithTitle:@"金额不能为0"];
         return;
     }
-    Expense *expense=[[Expense alloc] init];
-    expense.title=[self.remark.text trim];
-    expense.typeId=self.selectedType.id_;
-    expense.money=[self.moneyLabel.text doubleValue];
-    expense.expenseDate=[self.dateFmt stringFromDate:self.selectedDate];
-//    [[DBManager shareInstance] insertExpense:expense];
-    //保存
-    [[NSNotificationCenter defaultCenter] postNotificationName:NOTY_REFRESH_HOME_DATA object:nil];
-    [self dismissViewControllerAnimated:YES completion:nil];
+
+    [[SystemHudView sharedInstance] showWaitHudViewWithTitle:@"保存中..."];
+    __weak typeof(self) weakSelf = self;
+    [[NetWorkManager shareInstance] saveAccountDetailsWithBookId:self.accountBook.ID
+                                                        withType:1
+                                                       withMoney:[self.moneyLabel.text doubleValue]
+                                                 withAccountTime:[self.dateFmt stringFromDate:self.selectedDate]
+                                                    withCategory:self.selectedType.cnName
+                                                      withRemark:[self.remark.text trim]
+                                                       withBlock:^(id data, NSError *error) {
+                                                           ResponseBean *responseBean = data;
+                                                           if([REQEUST_SUCCESS isEqualToString:responseBean.code]) {
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [[SystemHudView sharedInstance] showSuccessHudViewWithTitle:responseBean.message];
+                                                                   [[SystemHudView sharedInstance] hideHUDView];
+                                                                   [weakSelf dismissViewControllerAnimated:YES completion:^{
+                                                                       if(self.addDetailBlock) {
+                                                                           self.addDetailBlock();
+                                                                       }
+                                                                   }];
+                                                               });
+                                                           }else{
+                                                               dispatch_async(dispatch_get_main_queue(), ^{
+                                                                   [[SystemHudView sharedInstance] showFailedHudViewWithTitle:responseBean.message];
+                                                                   [[SystemHudView sharedInstance] hideHUDView];
+                                                                });
+                                                           }
+    
+}];
+    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:NOTY_REFRESH_HOME_DATA object:nil];
+    
 }
 
 #pragma mark THDatePickerDelegate

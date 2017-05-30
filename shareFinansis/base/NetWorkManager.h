@@ -10,6 +10,7 @@
 #import "NetDefine.h"
 
 #define kNetwrok_Url_Base @"http://sharefinansis.applinzi.com/%@"
+//#define kNetwrok_Url_Base @"http://localhost:8080/%@"
 
 @interface NetWorkManager : NSObject
 + (instancetype)shareInstance;
@@ -29,5 +30,14 @@
 
 //根据账本id分页查询明细
 - (void)accountDetailsWithBookId:(NSString*)bookId withPage:(int) page withPageSize:(int) pageSize withBlock:(NetworkBlock)block;
+
+//保存账本明细
+- (void)saveAccountDetailsWithBookId:(NSString*)bookId
+                            withType:(int) type
+                           withMoney:(double) money
+                     withAccountTime:(NSString *) accountTime
+                        withCategory:(NSString *) category
+                          withRemark:(NSString *) remark
+                           withBlock:(NetworkBlock)block;
 
 @end

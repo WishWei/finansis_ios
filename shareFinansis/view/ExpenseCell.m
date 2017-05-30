@@ -15,6 +15,8 @@
 @property(nonatomic,weak)UIImageView *iconView;
 @property(nonatomic,weak)UILabel *titleLabel;
 @property(nonatomic,weak)UILabel *moneyLabel;
+@property(nonatomic,weak)UILabel *nameLabel;
+@property(nonatomic,weak)UILabel *dateLabel;
 @end
 
 @implementation ExpenseCell
@@ -62,7 +64,7 @@
     self.iconView.image = [UIImage imageNamed:imgName];
     NSString *title = (accountDetail.remark && ![accountDetail.remark isEqualToString:@""])?accountDetail.remark:accountDetail.category;
     self.titleLabel.text = title;
-    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f",accountDetail.money];
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f元",accountDetail.money];
 }
 
 
