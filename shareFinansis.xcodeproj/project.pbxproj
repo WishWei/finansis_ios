@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B52C3E0C2BA48BAEC2AED1D5 /* libPods-shareFinansis.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 192D64FF438794790F11FD29 /* libPods-shareFinansis.a */; };
+		DC16577C1EDD147C00CED684 /* AccountDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DC16577B1EDD147C00CED684 /* AccountDetailVC.m */; };
+		DC16577F1EDD174900CED684 /* AccountDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = DC16577E1EDD174900CED684 /* AccountDetail.m */; };
 		DC56268C1EDBC4D70035C663 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56268B1EDBC4D70035C663 /* main.m */; };
 		DC56268F1EDBC4D70035C663 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56268E1EDBC4D70035C663 /* AppDelegate.m */; };
 		DC5626971EDBC4D70035C663 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC5626961EDBC4D70035C663 /* Assets.xcassets */; };
@@ -34,12 +36,19 @@
 		DC5626E81EDBF6550035C663 /* AccountBookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626E71EDBF6550035C663 /* AccountBookCell.m */; };
 		DC5626EB1EDBF7DA0035C663 /* AccountBook.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626EA1EDBF7DA0035C663 /* AccountBook.m */; };
 		DC5626EE1EDC1D570035C663 /* PageInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = DC5626ED1EDC1D570035C663 /* PageInfo.m */; };
+		DCDB1CF01EDD1E130009EF97 /* type.plist in Resources */ = {isa = PBXBuildFile; fileRef = DCDB1CEC1EDD1E130009EF97 /* type.plist */; };
+		DCDB1CF31EDD25710009EF97 /* AddAccountDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDB1CF21EDD25710009EF97 /* AddAccountDetailVC.m */; };
+		DCDB1CF71EDD26100009EF97 /* NSString+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDB1CF61EDD26100009EF97 /* NSString+Extension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		192D64FF438794790F11FD29 /* libPods-shareFinansis.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-shareFinansis.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3967FDD31C597E39F64CE50 /* Pods-shareFinansis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shareFinansis.release.xcconfig"; path = "Pods/Target Support Files/Pods-shareFinansis/Pods-shareFinansis.release.xcconfig"; sourceTree = "<group>"; };
 		B42506B347E95FF7C00252C0 /* Pods-shareFinansis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shareFinansis.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shareFinansis/Pods-shareFinansis.debug.xcconfig"; sourceTree = "<group>"; };
+		DC16577A1EDD147C00CED684 /* AccountDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetailVC.h; sourceTree = "<group>"; };
+		DC16577B1EDD147C00CED684 /* AccountDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetailVC.m; sourceTree = "<group>"; };
+		DC16577D1EDD174900CED684 /* AccountDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountDetail.h; sourceTree = "<group>"; };
+		DC16577E1EDD174900CED684 /* AccountDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountDetail.m; sourceTree = "<group>"; };
 		DC5626871EDBC4D70035C663 /* shareFinansis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shareFinansis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC56268B1EDBC4D70035C663 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC56268D1EDBC4D70035C663 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +104,11 @@
 		DC5626EA1EDBF7DA0035C663 /* AccountBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountBook.m; sourceTree = "<group>"; };
 		DC5626EC1EDC1D570035C663 /* PageInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageInfo.h; sourceTree = "<group>"; };
 		DC5626ED1EDC1D570035C663 /* PageInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageInfo.m; sourceTree = "<group>"; };
+		DCDB1CEC1EDD1E130009EF97 /* type.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = type.plist; sourceTree = "<group>"; };
+		DCDB1CF11EDD25710009EF97 /* AddAccountDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountDetailVC.h; sourceTree = "<group>"; };
+		DCDB1CF21EDD25710009EF97 /* AddAccountDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountDetailVC.m; sourceTree = "<group>"; };
+		DCDB1CF51EDD26100009EF97 /* NSString+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extension.h"; sourceTree = "<group>"; };
+		DCDB1CF61EDD26100009EF97 /* NSString+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +152,8 @@
 		DC5626891EDBC4D70035C663 /* shareFinansis */ = {
 			isa = PBXGroup;
 			children = (
+				DCDB1CF41EDD25D40009EF97 /* extension */,
+				DCDB1CE61EDD1E130009EF97 /* Resource */,
 				DC5626CA1EDBD4550035C663 /* model */,
 				DC5626B01EDBD18A0035C663 /* view */,
 				DC5626AC1EDBD0AC0035C663 /* viewController */,
@@ -194,6 +210,10 @@
 				DC5626AE1EDBD0DA0035C663 /* LoginVC.m */,
 				DC5626E31EDBF2610035C663 /* AccountBookListVC.h */,
 				DC5626E41EDBF2610035C663 /* AccountBookListVC.m */,
+				DC16577A1EDD147C00CED684 /* AccountDetailVC.h */,
+				DC16577B1EDD147C00CED684 /* AccountDetailVC.m */,
+				DCDB1CF11EDD25710009EF97 /* AddAccountDetailVC.h */,
+				DCDB1CF21EDD25710009EF97 /* AddAccountDetailVC.m */,
 			);
 			path = viewController;
 			sourceTree = "<group>";
@@ -247,6 +267,8 @@
 				DC5626EA1EDBF7DA0035C663 /* AccountBook.m */,
 				DC5626EC1EDC1D570035C663 /* PageInfo.h */,
 				DC5626ED1EDC1D570035C663 /* PageInfo.m */,
+				DC16577D1EDD174900CED684 /* AccountDetail.h */,
+				DC16577E1EDD174900CED684 /* AccountDetail.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -258,6 +280,31 @@
 				DC5626DB1EDBE1140035C663 /* SystemHudView.m */,
 			);
 			path = SystemHudView;
+			sourceTree = "<group>";
+		};
+		DCDB1CE61EDD1E130009EF97 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB1CEB1EDD1E130009EF97 /* plist */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		DCDB1CEB1EDD1E130009EF97 /* plist */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB1CEC1EDD1E130009EF97 /* type.plist */,
+			);
+			path = plist;
+			sourceTree = "<group>";
+		};
+		DCDB1CF41EDD25D40009EF97 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				DCDB1CF51EDD26100009EF97 /* NSString+Extension.h */,
+				DCDB1CF61EDD26100009EF97 /* NSString+Extension.m */,
+			);
+			path = extension;
 			sourceTree = "<group>";
 		};
 		F2A0EAF0D13C26AA3FB74DC9 /* Pods */ = {
@@ -331,6 +378,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCDB1CF01EDD1E130009EF97 /* type.plist in Resources */,
 				DC56269A1EDBC4D70035C663 /* LaunchScreen.storyboard in Resources */,
 				DC5626971EDBC4D70035C663 /* Assets.xcassets in Resources */,
 			);
@@ -391,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC16577F1EDD174900CED684 /* AccountDetail.m in Sources */,
 				DC5626D51EDBD7C90035C663 /* NetWorkManager.m in Sources */,
 				DC5626C41EDBD18A0035C663 /* HomeHeaderView.m in Sources */,
 				DC5626A81EDBCFF20035C663 /* BaseViewController.m in Sources */,
@@ -404,6 +453,7 @@
 				DC5626AF1EDBD0DA0035C663 /* LoginVC.m in Sources */,
 				DC5626C61EDBD18A0035C663 /* SummaryHeader.m in Sources */,
 				DC56268F1EDBC4D70035C663 /* AppDelegate.m in Sources */,
+				DCDB1CF31EDD25710009EF97 /* AddAccountDetailVC.m in Sources */,
 				DC5626E21EDBEC030035C663 /* Global.m in Sources */,
 				DC5626C91EDBD18A0035C663 /* ZPNumberKeyboard.m in Sources */,
 				DC5626EB1EDBF7DA0035C663 /* AccountBook.m in Sources */,
@@ -415,6 +465,8 @@
 				DC5626E51EDBF2610035C663 /* AccountBookListVC.m in Sources */,
 				DC5626EE1EDC1D570035C663 /* PageInfo.m in Sources */,
 				DC5626C81EDBD18A0035C663 /* WXScrollMenuView.m in Sources */,
+				DC16577C1EDD147C00CED684 /* AccountDetailVC.m in Sources */,
+				DCDB1CF71EDD26100009EF97 /* NSString+Extension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

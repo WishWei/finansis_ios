@@ -27,4 +27,7 @@
 //根据用户id分页查询关联的账本
 - (void)accountBooksWithPage:(int) page withPageSize:(int) pageSize withBlock:(NetworkBlock)block;
 
+//根据账本id分页查询明细
+- (void)accountDetailsWithBookId:(NSString*)bookId withPage:(int) page withPageSize:(int) pageSize withBlock:(NetworkBlock)block;
+
 @end

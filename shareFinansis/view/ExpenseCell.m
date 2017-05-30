@@ -9,10 +9,9 @@
 #import "ExpenseCell.h"
 #import "SDAutoLayout.h"
 #import "Theme.h"
-#import "Expense.h"
+#import "AccountDetail.h"
 
 @interface ExpenseCell()
-@property(nonatomic,weak)UIView *bgView;
 @property(nonatomic,weak)UIImageView *iconView;
 @property(nonatomic,weak)UILabel *titleLabel;
 @property(nonatomic,weak)UILabel *moneyLabel;
@@ -57,13 +56,15 @@
     self.moneyLabel.sd_layout.rightSpaceToView(self.bgView,15).topSpaceToView(self.bgView,5).bottomSpaceToView(self.bgView,5).leftSpaceToView(self.titleLabel,5);
 }
 
-- (void)setExpense:(Expense *)expense{
-    _expense=expense;
-    self.iconView.image=[UIImage imageNamed:expense.typeImg];
-    NSString *title = (expense.title && ![expense.title isEqualToString:@""])?expense.title:expense.cnName;
-    self.titleLabel.text=title;
-    self.moneyLabel.text=[NSString stringWithFormat:@"%.2f",expense.money];
-//    self.bgView.backgroundColor=expense.bgColor;
+- (void)setAccountDetail:(AccountDetail *)accountDetail {
+    _accountDetail = accountDetail;
+    NSString *imgName = [[Global shareInstance].categorieImgMap objectForKey:accountDetail.category];
+    self.iconView.image = [UIImage imageNamed:imgName];
+    NSString *title = (accountDetail.remark && ![accountDetail.remark isEqualToString:@""])?accountDetail.remark:accountDetail.category;
+    self.titleLabel.text = title;
+    self.moneyLabel.text = [NSString stringWithFormat:@"%.2f",accountDetail.money];
 }
+
+
 
 @end

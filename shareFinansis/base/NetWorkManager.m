@@ -101,6 +101,23 @@
     }];
 }
 
+- (void)accountDetailsWithBookId:(NSString*)bookId withPage:(int) page withPageSize:(int) pageSize withBlock:(NetworkBlock)block {
+    NSString *fullPath = [NSString stringWithFormat:kNetwrok_Url_Base, @"accountDetail/findBookDetailByBookIdPage.do"];
+    NSMutableDictionary *params = [NSMutableDictionary  dictionary];
+    [params setValue:bookId forKey:@"bookId"];
+    [params setValue:[NSString stringWithFormat:@"%d",page] forKey:@"page"];
+    [params setValue:[NSString stringWithFormat:@"%d",pageSize] forKey:@"pageSize"];
+    [self request:fullPath withParams:params withMethod:RequestMethodGET withBlock:^(id data, NSError *error) {
+        if(error){
+            error = [NSError errorWithDomain:@"网络异常" code:-9999 userInfo:nil];
+            block(nil,error);
+        }else{
+            ResponseBean *responseBean=[ResponseBean mj_objectWithKeyValues:data];
+            block(responseBean,nil);
+        }
+    }];
+}
+
 
 
 

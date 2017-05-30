@@ -10,7 +10,13 @@
 #import "User.h"
 
 @interface Global : NSObject
+
+@property(nonatomic,strong) NSMutableArray *categories;
+@property(nonatomic,strong) NSMutableDictionary *categorieImgMap;
+
 + (instancetype)shareInstance;
+//加载支出类型
+- (void)loadTypes;
 - (void)saveLoginUser:(User*)user;
 //上次登录过的用户
 - (User*)lastLoginUser;

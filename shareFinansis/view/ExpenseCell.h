@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@class Expense;
+@class AccountDetail;
 
 @interface ExpenseCell : UITableViewCell
-@property(nonatomic,strong) Expense *expense;
+@property(nonatomic,strong) AccountDetail *accountDetail;
+@property(nonatomic,weak) UIView *bgView;
 @end

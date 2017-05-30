@@ -33,6 +33,7 @@
     IQKeyboardManager *man = [IQKeyboardManager sharedManager];
     man.enableAutoToolbar = YES;
     man.enable = YES;
+    [[Global shareInstance] loadTypes];
     [self autoLogin];
     return YES;
 }

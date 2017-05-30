@@ -14,6 +14,7 @@
 #import "ResponseBean.h"
 #import "SystemHudView.h"
 #import "PageInfo.h"
+#import "AccountDetailVC.h"
 
 @interface AccountBookListVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -107,6 +108,15 @@
     AccountBook *accountBook = [self.books objectAtIndex:indexPath.row];
     cell.accountBook = accountBook;
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    AccountBook *accountBook = [self.books objectAtIndex:indexPath.row];
+    if(accountBook) {
+        AccountDetailVC *vc = [[AccountDetailVC alloc] init];
+        vc.accountBook = accountBook;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 

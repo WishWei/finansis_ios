@@ -8,6 +8,7 @@
 
 #import "Global.h"
 #import "NetWorkManager.h"
+#import "Type.h"
 
 @interface Global()
 @property(nonatomic,strong) User *loginUser;
@@ -27,6 +28,24 @@
          self.userStorePath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/adimage"];
     }
     return self;
+}
+
+- (void)loadTypes{
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"type" ofType:@"plist"];
+    NSArray *array = [NSArray arrayWithContentsOfFile:path];  //读取数据
+    NSMutableArray *types = [NSMutableArray array];
+    NSMutableDictionary *categorieImgMap = [NSMutableDictionary dictionary];
+    for (NSDictionary *dict in array) {
+        Type *type=[[Type alloc] init];
+        type.id_=[dict objectForKey:@"id"];
+        type.enName=[dict objectForKey:@"enName"];
+        type.cnName=[dict objectForKey:@"cnName"];
+        type.img=[dict objectForKey:@"img"];
+        [types addObject:type];
+        [categorieImgMap setObject:type.img forKey:type.cnName];
+    }
+    self.categorieImgMap = categorieImgMap;
+    self.categories=types;
 }
 
 - (void)saveLoginUser:(User*)user {
